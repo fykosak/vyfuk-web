@@ -2,7 +2,7 @@
 
 /**
  * Utility class for crafting and sending SOAP requests.
- * 
+ *
  * @license GPL 2 http://www.gnu.org/licenses/gpl-2.0.html
  * @author  Michal Koutný <michal@fykos.cz>
  */
@@ -75,7 +75,8 @@ class fksdownloader_soap {
             'contest' => $contest,
             'year' => $year,
             'cumulatives' => array(// supports bundling multiple cummulative specifications in on request
-                'cumulative' => $series, // list of series
+                // Circumvent PHP ambiguity by serializing list manually.
+                'cumulative' => implode(' ', $series), // list of series
             ),
         );
     }
@@ -85,7 +86,8 @@ class fksdownloader_soap {
             'contest' => $contest,
             'year' => $year,
             'school-cumulatives' => array(// supports bundling multiple cummulative specifications in on request
-                'school-cumulative' => $series, // list of series
+                // Circumvent PHP ambiguity by serializing list manually.
+                'school-cumulative' => implode(' ', $series), // list of series
             ),
         );
     }

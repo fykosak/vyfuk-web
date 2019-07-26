@@ -6,18 +6,18 @@
  */
 
 // must be run within Dokuwiki
-if (!defined('DOKU_INC')) die();
+if(!defined('DOKU_INC')) die();
 
 // Check for presence of data plugin
-$dataPluginFile = DOKU_PLUGIN . 'data/syntax/table.php';
-if (file_exists($dataPluginFile)) {
+$dataPluginFile = DOKU_PLUGIN.'data/syntax/table.php';
+if(file_exists($dataPluginFile)){
     require_once $dataPluginFile;
 } else {
     msg('datatemplate: Cannot find Data plugin.', -1);
     return;
 }
 
-require_once(DOKU_PLUGIN . 'datatemplate/syntax/inc/cache.php');
+require_once(DOKU_PLUGIN.'datatemplate/syntax/inc/cache.php');
 
 /**
  * This inherits from the table syntax of the data plugin, because it's basically the
@@ -26,11 +26,10 @@ require_once(DOKU_PLUGIN . 'datatemplate/syntax/inc/cache.php');
 class syntax_plugin_datatemplate_list extends syntax_plugin_data_table {
 
     var $dtc = null; // A cache instance
-
     /**
      * Constructor.
      */
-    function __construct() {
+    function __construct(){
         parent::__construct();
         $this->dtc = new datatemplate_cache($this->dthlp);
     }
@@ -40,10 +39,10 @@ class syntax_plugin_datatemplate_list extends syntax_plugin_data_table {
      */
     function connectTo($mode) {
         $this->Lexer->addSpecialPattern('----+ *datatemplatelist(?: [ a-zA-Z0-9_]*)?-+\n.*?\n----+',
-            $mode, 'plugin_datatemplate_list');
+                                        $mode, 'plugin_datatemplate_list');
     }
 
-    function handle($match, $state, $pos, Doku_Handler $handler) {
+    function handle($match, $state, $pos, Doku_Handler $handler){
         // We want the parent to handle the parsing, but still accept
         // the "template" paramter. So we need to remove the corresponding
         // line from $match.
@@ -52,9 +51,9 @@ class syntax_plugin_datatemplate_list extends syntax_plugin_data_table {
         foreach ($lines as $num => $line) {
             // ignore comments
             $line = preg_replace('/(?<![&\\\\])#.*$/', '', $line);
-            $line = str_replace('\\#', '#', $line);
+            $line = str_replace('\\#','#',$line);
             $line = trim($line);
-            if (empty($line)) continue;
+            if(empty($line)) continue;
             $line = preg_split('/\s*:\s*/', $line, 2);
             if (strtolower($line[0]) == 'template') {
                 $template = $line[1];
@@ -63,15 +62,15 @@ class syntax_plugin_datatemplate_list extends syntax_plugin_data_table {
         }
         $match = implode("\n", $lines);
         $data = parent::handle($match, $state, $pos, $handler);
-        if (!empty($template)) {
+        if(!empty($template)) {
             $data['template'] = $template;
         }
 
         // For caching purposes, we always need to query the page id.
-        if (!array_key_exists('%pageid%', $data['cols'])) {
+        if(!array_key_exists('%pageid%', $data['cols'])) {
             $data['cols']['%pageid%'] = array('multi' => '', 'key' => '%pageid%',
-                'title' => 'Title', 'type' => 'page');
-            if (array_key_exists('headers', $data))
+                                              'title' => 'Title', 'type' => 'page');
+            if(array_key_exists('headers', $data))
                 array_push($data['headers'], '%pageid%');
         }
         return $data;
@@ -110,20 +109,20 @@ class syntax_plugin_datatemplate_list extends syntax_plugin_data_table {
      */
     function render($format, Doku_Renderer $R, $data) {
 
-        if (is_null($data)) return false;
+        if(is_null($data)) return false;
 
         $sql = $this->_buildSQL($data);
 
-        if ($format == 'metadata') {
+        if($format == 'metadata') {
             // Remove metadata from previous plugin versions
             $this->dtc->removeMeta($R);
         }
 
-        if ($format == 'xhtml') {
+        if($format == 'xhtml') {
             $R->info['cache'] = false;
             $this->dtc->checkAndBuildCache($data, $sql, $this);
 
-            if (!array_key_exists('template', $data)) {
+            if(!array_key_exists('template', $data)) {
                 // If keyword "template" not present, we will leave
                 // the rendering to the parent class.
                 msg("datatemplatelist: no template specified, using standard table output.");
@@ -133,18 +132,18 @@ class syntax_plugin_datatemplate_list extends syntax_plugin_data_table {
             $datarows = $this->dtc->getData($sql);
             $datarows = $this->_match_filters($data, $datarows);
 
-            if (count($datarows) < $_REQUEST['dataofs']) $_REQUEST['dataofs'] = 0;
+            if(count($datarows) < $_REQUEST['dataofs']) $_REQUEST['dataofs'] = 0;
 
             $rows = array();
             $i = 0;
             $cnt = 0;
-            foreach ($datarows as $row) {
+            foreach($datarows as $row) {
                 $i++;
-                if ($i - 1 < $_REQUEST['dataofs']) continue;
+                if($i - 1 < $_REQUEST['dataofs']) continue;
                 $rows[] = $row;
                 $cnt++;
 
-                if ($data['limit'] && ($cnt == $data['limit'])) break; // keep an eye on the limit
+                if($data['limit'] && ($cnt == $data['limit'])) break; // keep an eye on the limit
             }
 
             if ($cnt === 0) {
@@ -217,12 +216,12 @@ class syntax_plugin_datatemplate_list extends syntax_plugin_data_table {
         $replacers['keys_id'] = array();
         foreach ($rows as $row) {
             $replacers['keys_id'][$i] = array();
-            foreach ($replacers['keys'] as $key) {
-                $replacers['keys_id'][$i][] = "@@[" . $i . "]" . substr($key, 2);
+            foreach($replacers['keys'] as $key) {
+                $replacers['keys_id'][$i][] = "@@[" . $i . "]" . substr($key,2);
             }
             $replacers['vals_id'][$i] = array();
             $replacers['raw_vals'] = array();
-            foreach ($row as $num => $cval) {
+            foreach($row as $num => $cval) {
                 $replacers['raw_vals'][] = trim($cval);
                 $replacers['vals_id'][$i][] = $this->dthlp->_formatData($data['cols'][$clist[$num]], $cval, $R);
             }
@@ -240,17 +239,17 @@ class syntax_plugin_datatemplate_list extends syntax_plugin_data_table {
         $text = p_render('xhtml', $instr, $info);
         // remove toc, section edit buttons and category tags
         $patterns = array('!<div class="toc">.*?(</div>\n</div>)!s',
-            '#<!-- SECTION \[(\d*-\d*)\] -->#e',
-            '!<div class="category">.*?</div>!s');
-        $replace = array('', '', '');
-        $text = preg_replace($patterns, $replace, $text);
+                          '#<!-- SECTION \[(\d*-\d*)\] -->#',
+                          '!<div class="category">.*?</div>!s');
+        $replace  = array('','','');
+        $text = preg_replace($patterns,$replace,$text);
         // Do remaining replacements
-        foreach ($replacers['vals_id'] as $num => $vals) {
+        foreach($replacers['vals_id'] as $num => $vals) {
             $text = str_replace($replacers['keys_id'][$num], $vals, $text);
         }
 
         /** @deprecated 18 May 2013 column key names are used in stead of (localized) headers */
-        if (strpos($text, '@@Page@@') !== false) {
+        if(strpos($text, '@@Page@@') !== false) {
             msg("datatemplate plugin: Use of @@Page@@ in '{$wikipage}' is deprecated. Replace it by @@%title%@@ please.", -1);
         }
 
@@ -276,42 +275,42 @@ class syntax_plugin_datatemplate_list extends syntax_plugin_data_table {
 
         $text = '';
         // Add pagination controls
-        if ($data['limit']) {
-            $params = $this->dthlp->_a2ua('dataflt', $_REQUEST['dataflt']);
+        if($data['limit']){
+            $params = $this->dthlp->_a2ua('dataflt',$_REQUEST['dataflt']);
             //$params['datasrt'] = $_REQUEST['datasrt'];
-            $offset = (int)$_REQUEST['dataofs'];
-            if ($offset) {
+            $offset = (int) $_REQUEST['dataofs'];
+            if($offset){
                 $prev = $offset - $data['limit'];
-                if ($prev < 0) $prev = 0;
+                if($prev < 0) $prev = 0;
 
                 // keep url params
                 $params['dataofs'] = $prev;
 
-                $text .= '<a href="' . wl($ID, $params) .
-                    '" title="' . $this->getLang('prevpage') .
-                    '" class="prev">' . '&larr; ' . $this->getLang('prevpage') . '</a>';
+                $text .= '<a href="'.wl($ID,$params).
+                    '" title="'.$this->getLang('prevpage').
+                    '" class="prev">'.'&larr; '.$this->getLang('prevpage').'</a>';
             } else {
-                $text .= '<span class="prev disabled">&larr; ' . $this->getLang('prevpage') . '</span>';
+                $text .= '<span class="prev disabled">&larr; '.$this->getLang('prevpage').'</span>';
             }
 
-            for ($i = 1; $i <= ceil($numrows / $data['limit']); $i++) {
+            for($i=1; $i <= ceil($numrows / $data['limit']); $i++) {
                 $offs = ($i - 1) * $data['limit'];
                 $params['dataofs'] = $offs;
-                $selected = $offs == $_REQUEST['dataofs'] ? ' class="selected"' : '';
-                $text .= '<a href="' . wl($ID, $params) . '"' . $selected . '>' . $i . '</a>';
+                $selected = $offs == $_REQUEST['dataofs'] ? ' class="selected"': '';
+                $text .= '<a href="'.wl($ID, $params).'"' . $selected . '>' . $i. '</a>';
             }
 
-            if ($numrows - $offset > $data['limit']) {
+            if($numrows - $offset > $data['limit']){
                 $next = $offset + $data['limit'];
 
                 // keep url params
                 $params['dataofs'] = $next;
 
-                $text .= '<a href="' . wl($ID, $params) .
-                    '" title="' . $this->getLang('nextpage') .
-                    '" class="next">' . $this->getLang('nextpage') . ' &rarr;' . '</a>';
+                $text .= '<a href="'.wl($ID,$params).
+                    '" title="'.$this->getLang('nextpage').
+                    '" class="next">'.$this->getLang('nextpage').' &rarr;'.'</a>';
             } else {
-                $text .= '<span class="next disabled">' . $this->getLang('nextpage') . ' &rarr;</span>';
+                $text .= '<span class="next disabled">'.$this->getLang('nextpage').' &rarr;</span>';
             }
             return '<div class="prevnext">' . $text . '</div>';
         }
@@ -332,26 +331,26 @@ class syntax_plugin_datatemplate_list extends syntax_plugin_data_table {
          */
         $out = array();
         $keys = array();
-        foreach ($data['headers'] as $k => $v) {
+        foreach($data['headers'] as $k => $v) {
             $keys[$v] = $k;
         }
         $filters = $this->dthlp->_get_filters();
-        if (!$datarows) return $out;
-        foreach ($datarows as $dr) {
+        if(!$datarows) return $out;
+        foreach($datarows as $dr) {
             $matched = True;
             $datarow = array_values($dr);
-            foreach ($filters as $f) {
+            foreach($filters as $f) {
                 if (strcasecmp($f['key'], 'any') == 0) {
                     $cols = array_keys($keys);
                 } else {
                     $cols = array($f['key']);
                 }
                 $colmatch = False;
-                foreach ($cols as $col) {
+                foreach($cols as $col) {
                     $multi = $data['cols'][$col]['multi'];
-                    if ($multi) $col .= 's';
+                    if($multi) $col .= 's';
                     $idx = $keys[$col];
-                    switch ($f['compare']) {
+                    switch($f['compare']) {
                         case 'LIKE':
                             $comp = $this->_match_wildcard($f['value'], $datarow[$idx]);
                             break;
@@ -366,13 +365,13 @@ class syntax_plugin_datatemplate_list extends syntax_plugin_data_table {
                     }
                     $colmatch = $colmatch || $comp;
                 }
-                if ($f['logic'] == 'AND') {
+                if($f['logic'] == 'AND') {
                     $matched = $matched && $colmatch;
                 } else {
                     $matched = $matched || $colmatch;
                 }
             }
-            if ($matched) $out[] = $dr;
+            if($matched) $out[] = $dr;
         }
         return $out;
     }
@@ -383,12 +382,12 @@ class syntax_plugin_datatemplate_list extends syntax_plugin_data_table {
      * @param $haystack
      * @return boolean Whether the pattern matches.
      */
-    function _match_wildcard($wildcard_pattern, $haystack) {
+    function _match_wildcard( $wildcard_pattern, $haystack ) {
         $regex = str_replace(array("%", "\?"), // wildcard chars
-            array('.*', '.'),   // regexp chars
-            preg_quote($wildcard_pattern)
-        );
-        return preg_match('/^\s*' . $regex . '$/im', $haystack);
+                             array('.*','.'),   // regexp chars
+                             preg_quote($wildcard_pattern)
+            );
+        return preg_match('/^\s*'.$regex.'$/im', $haystack);
     }
 
     function nullList($data, $clist, $R) {

@@ -3,5 +3,5 @@ author Michal Červeňák
 email  miso@fykos.cz
 date   2014-03-16
 name   FKSimageshow
-desc   Select random fotography from gallery and display it.
+desc   Create link to page with image.
 url    https://github.com/cevro/dokuwiki-plugin-fksimageshow.git

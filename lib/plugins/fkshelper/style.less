@@ -1,0 +1,40 @@
+#content table {
+  thead th.headerSortDown {
+    background-image: url(tablesort/images/asc.gif);
+  }
+  thead th.headerSortUp {
+    background-image: url(tablesort/images/desc.gif);
+  }
+}
+
+.image-show {
+  &.ib {
+    height: 240px;
+    overflow: hidden;
+  }
+  padding: .5em;
+
+  .image-container {
+    a:hover .caption {
+      opacity: 1;
+    }
+    .caption {
+      .icon {
+        font-size: 7rem;
+        display: block;
+      }
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      background-color: rgba(0, 0, 0, .5);
+      color: white;
+    }
+
+    div.image {
+      background-size: cover;
+      background-position-y: 50%;
+
+    }
+    position: relative;
+  }
+}

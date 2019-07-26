@@ -44,7 +44,7 @@ class action_plugin_facebooklike extends DokuWiki_Action_Plugin {
 	/**
 	 * Register its handlers.
 	 */
-	function register(&$controller) {
+	function register(Doku_Event_Handler $controller) {
 	    $controller->register_hook('TPL_METAHEADER_OUTPUT', 'BEFORE',  $this, '_addHeaders');
 	}
 

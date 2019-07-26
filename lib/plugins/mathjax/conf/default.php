@@ -5,7 +5,7 @@
  * @author Mark Liffiton <liffiton@gmail.com>
  */
 
-$conf['url'] = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML';
+$conf['url'] = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML.js';
 $conf['config'] = 'MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [ ["$","$"], ["\\\\(","\\\\)"] ],
@@ -14,4 +14,5 @@ $conf['config'] = 'MathJax.Hub.Config({
     }
 });';
 $conf['configfile'] = '';
+$conf['mathtags'] = '';
 

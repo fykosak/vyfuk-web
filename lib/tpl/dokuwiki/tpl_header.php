@@ -21,11 +21,14 @@ if (!defined('DOKU_INC')) die();
             // get logo either out of the template images folder or data/media folder
             $logoSize = array();
             $logo = tpl_getMediaFile(array(':wiki:logo.png', ':logo.png', 'images/logo.png'), false, $logoSize);
-var_dump(wl());
+
             // display logo and wiki title in a link to the home page
-            ?> <a href="<?php echo wl(cleanID(":start"),null,false);?>" accesskey="h" title="[H]" >
-                <img src="<?php echo $logo;?>'" alt="" /> <span><?php echo $conf['title'];?></span>
-               </a></h1>
+            tpl_link(
+                wl(),
+                '<img src="'.$logo.'" '.$logoSize[3].' alt="" /> <span>'.$conf['title'].'</span>',
+                'accesskey="h" title="[H]"'
+            );
+        ?></h1>
         <?php if ($conf['tagline']): ?>
             <p class="claim"><?php echo $conf['tagline']; ?></p>
         <?php endif ?>
@@ -43,10 +46,12 @@ var_dump(wl());
                             tpl_userinfo(); /* 'Logged in as ...' */
                             echo '</li>';
                         }
-                        tpl_action('admin', 1, 'li');
-                        tpl_action('profile', 1, 'li');
-                        tpl_action('register', 1, 'li');
-                        tpl_action('login', 1, 'li');
+                        tpl_toolsevent('usertools', array(
+                            tpl_action('admin', true, 'li', true),
+                            tpl_action('profile', true, 'li', true),
+                            tpl_action('register', true, 'li', true),
+                            tpl_action('login', true, 'li', true)
+                        ));
                     ?>
                 </ul>
             </div>
@@ -61,9 +66,11 @@ var_dump(wl());
             </div>
             <ul>
                 <?php
-                    tpl_action('recent', 1, 'li');
-                    tpl_action('media', 1, 'li');
-                    tpl_action('index', 1, 'li');
+                    tpl_toolsevent('sitetools', array(
+                        tpl_action('recent', true, 'li', true),
+                        tpl_action('media', true, 'li', true),
+                        tpl_action('index', true, 'li', true)
+                    ));
                 ?>
             </ul>
         </div>
@@ -82,7 +89,7 @@ var_dump(wl());
         </div>
     <?php endif ?>
 
-    <?php html_msgarea() ?>
+
 
     <hr class="a11y" />
 </div></div><!-- /header -->

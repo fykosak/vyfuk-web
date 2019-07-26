@@ -1,84 +1,124 @@
 <?php
+
 /**
  * Czech language file (UTF-8 encoding)
  *
- * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
+ * @license   GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * @author    Michal Červeňák <miso at fykos dot cz>
  */
-
-// settings must be present and set appropriately for the language
-$lang['encoding']   = 'utf-8';
-$lang['direction']  = 'ltr';
- 
-// for admin plugins, the menu prompt to be displayed in the admin menu
-// if set here, the plugin doesn't need to override the getMenuText() method
+$lang['encoding'] = 'utf-8';
+$lang['direction'] = 'ltr';
 /**
- * Admin plugin add-edit
+ * other buttons
  */
-$lang['addmenu']            = 'Přidat aktualitu'; 
-$lang['editmenu']           = 'Upravit aktuality';
-$lang['add_n_edit_menu']    = 'Přidat a upravit aktuality';
-
-/**
- * Admin plugin permut
- */
-$lang['permut_menu']         = 'Upravit pořadí aktualit';
-/**
- * Add edit 
- */
-$lang['btn_edit_news']       = 'Upravit aktualitu';
-$lang['btn_add_news']        = 'Přidat aktualitu';
-$lang['btn_get_add_news']    = 'Přejít k vytvoření aktuality';
-$lang['btn_more_news']       = 'Starší aktuality';
-$lang['btn_newsfeed_link']   = 'Link na túto aktualitu';
-$lang['btn_delete_news']     = 'Upraviť stream';
-$lang['btn_manage_stream']     = 'Spravovať stream';
-
+$lang['btn_edit_news'] = 'Upravit tuto novinku';
+$lang['btn_more_news'] = 'Starší novinky';
+$lang['btn_share'] = 'Sdílet';
+$lang['btn_priority_edit'] = 'Upravit prioritu';
+$lang['btn_create_news'] = 'Vytvořit novinku';
+$lang['btn_opt'] = 'Další možnosti';
 /**
  * label to form
  */
-$lang['author']           = 'Autor';
-$lang['email']            = 'E-mail';
-$lang['date']             = 'Datum';
-$lang['newsdate']         = 'Datum';
-$lang['newsname']         = 'Nadpis';
-$lang['name']             = 'Nadpis';
+$lang['author-name'] = 'Jméno autora';
+$lang['author-email'] = 'E-mail autora';
+
+$lang['news-date'] = 'Datum';
+
+$lang['title'] = 'Nadpis';
+
+$lang['image'] = 'Obrázek';
+$lang['category'] = 'Kategorie';
+
+$lang['link-href'] = 'Cíl odkazu';
+$lang['link-title'] = 'Text odkazu';
+
+$lang['text'] = 'text';
 
 
+$lang['stream'] = 'Vlákno';
 /**
  * date for syntax plugin
  */
-$lang['jan']              = 'ledna';
-$lang['feb']              = 'února';
-$lang['mar']              = 'března';
-$lang['apr']              = 'dubna';
+$lang['jan'] = 'ledna';
+$lang['feb'] = 'února';
+$lang['mar'] = 'března';
+$lang['apr'] = 'dubna';
+$lang['may'] = 'května';
+$lang['jun'] = 'června';
+$lang['jul'] = 'července';
+$lang['aug'] = 'srpna';
+$lang['sep'] = 'září';
+$lang['oct'] = 'října';
+$lang['now'] = 'listopadu';
+$lang['dec'] = 'prosince';
+/**
+ * Warning & info
+ */
+$lang['no_more'] = 'Momentálně nejsou žádné další aktuality';
+$lang['news_non_exist'] = 'Ups! Taková novinka neexistuje!';
 
-$lang['may']              = 'května';
-$lang['jun']              = 'června';
-$lang['jul']              = 'července';
-$lang['aug']              = 'srpna';
+/*
+ *
+ */
+$lang['cache_del'] = 'Smazat cache';
+$lang['cache_del_full'] = 'Smazat všechny cache';
+/*
+ * Priority
+ */
+$lang['btn_save_priority'] = 'Uložit prioritu';
+$lang['valid_from'] = 'Priorita platná od';
+$lang['valid_to'] = 'Priorita platná do';
+$lang['priority_value'] = 'Hodnota priority';
 
-$lang['sep']              = 'září';
-$lang['oct']              = 'října';
-$lang['now']              = 'listopadu';
-$lang['dec']              = 'prosince';
+/*
+ * Delete from stream
+ */
+$lang['delete_news'] = 'Odstranit z vlákna';
+$lang['o_rly_delete'] = 'Chceš smazat tuto aktualitu? Opravdu to myslíš vážně? Poslední šance změnit rozhodnutí...';
+$lang['js']['oRlyDelete'] = $lang['o_rly_delete'];
+/**
+ * manage stream
+ */
+$lang['push_menu'] = 'Přidat existujicí novinku do vlákna';
+$lang['push_in_stream'] = 'Nacházíte se ve vlákně';
+
+$lang['push_choose_stream'] = 'Změnit vlákno';
+
+$lang['btn_push_stream'] = $lang['push_menu'];
 
 
+$lang['btn_push_news'] = 'Přidat do vlákna ';
+
+$lang['menu_delete_stream'] = 'Odstranit novinku z vlákna';
+$lang['btn_delete_stream'] = $lang['menu_delete_stream'];
+$lang['info_delete_stream'] = 'Spravovat toto vlákno:';
 
 /**
- * Waring & info
+ * for admin dependence
  */
-$lang['change_stream']     = 'zmeniť stream';
-$lang['add_news']          = 'Přidat aktualitu číslo: ';
-$lang['no_more']           ='Niesu žiadné dalšie aktuality na zobrazenie';
-$lang['returntomenu']      = 'Návrat do menu';
-$lang['autoreturn']        = 'Stránka bude přesměrována během pěti sekund.';
+$lang['dependence_menu'] = 'Upravit závislosti vláken';
+$lang['dep_create'] = 'Vytvořit novou závislost';
+$lang['dep_created'] = 'Závislost byla vytvořena';
+$lang['dep_exist'] = 'Závislost již existuje';
+$lang['dep_full_info'] = 'Novinka přidaná do mateřského vlákna se automaticky přidá i do dceřiného vlákna. <br />
+                Novinka přidaná do dceřiného vlákna se v mateřském nezobrazí.';
+$lang['dep_parent_info'] = 'Vlákno od kterého se dědí "matka"';
+$lang['dep_child_info'] = 'Vlákno do kterého se dědí "dcera"';
+$lang['dep_list'] = 'Seznam vláken a jejich závislostí';
+$lang['dep_list_parent'] = 'Od tohoto vlákna přímo dědí, je matka vůči:';
+$lang['dep_list_child'] = 'Do tohoto vlákna přímo dědí, je dcera vůči:';
+$lang['dep_list_parent_full'] = 'Od tohoto vlákna celkově dědí, je matka/babička vůči:';
+$lang['dep_list_child_full'] = 'Do tohoto vlákna celkově dědí, je dcera/vnučka vůči:';
 
-$lang['info_delete_news']='Spravovať tento stream: <ul><li>Upraviť poradie aktualít</li><li>Upraviť zobrazovnie</li></ul>';
-$lang['info_add_news']='Pridať novú aktualitu do tohoto streamu';
 /**
- * @TODO vymyslieť niečo pekné!
+ * for admin stream
  */
-$lang['news_non_exist']    = 'Ops!';
 
+$lang['stream_create'] = 'Vytvoř vlákno';
+$lang['stream_list'] = 'Seznam vláken';
+$lang['stream_delete'] = 'Odstraň vlákno';
 
+$lang['alw_dep'] = 'Povolit dědění';
+
+$lang['stream_menu'] = 'Nastavenia streamov';

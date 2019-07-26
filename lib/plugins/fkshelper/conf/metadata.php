@@ -1,9 +1,5 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-$meta['deny_html_out']=array();
+$meta['deny_html_out'] = [];
+$meta['person-page-link'] = ['string'];
+$meta['person-image-src'] = ['string'];

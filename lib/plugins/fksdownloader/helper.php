@@ -108,7 +108,7 @@ class helper_plugin_fksdownloader extends DokuWiki_Plugin {
         $filename = sprintf('result.cumm.%s.%s.%s', $contest, $year, implode('', $series));
         $that = $this;
         return $this->tryCache($filename, $expiration, function() use($contest, $year, $series, $that) {
-                            $request = $that->getSoap()->createResultsCummulativeRequest($contest, $year, implode(' ', $series));
+                            $request = $that->getSoap()->createResultsCummulativeRequest($contest, $year, $series);
                             return $that->downloadResults($request);
                         });
     }
@@ -117,7 +117,7 @@ class helper_plugin_fksdownloader extends DokuWiki_Plugin {
         $filename = sprintf('result.school-cumm.%s.%s.%s', $contest, $year, implode('', $series));
         $that = $this;
         return $this->tryCache($filename, $expiration, function() use($contest, $year, $series, $that) {
-                            $request = $that->getSoap()->createResultsSchoolCummulativeRequest($contest, $year, implode(' ', $series));
+                            $request = $that->getSoap()->createResultsSchoolCummulativeRequest($contest, $year, $series);
                             return $that->downloadResults($request);
                         });
     }

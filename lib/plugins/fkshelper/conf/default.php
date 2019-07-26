@@ -1,11 +1,4 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 $conf['deny_html_out']='
         <html>
         <head>
@@ -28,3 +21,6 @@ $conf['deny_html_out']='
    <img src="http://cdn.meme.am/instances/400x/54995689.jpg" style="position:absolute" alt="fuck you bro"/>
 </body>
             </html>';
+
+$conf['person-page-link']='';
+$conf['person-image-src']='';

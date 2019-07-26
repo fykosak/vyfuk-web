@@ -1,9 +1,3 @@
-====== Přihlášení pro organizátory ======
+====== Přihlášení ======
 
-Prihlás se pomocí prihlasovacího jmena a hesla z **[[https://db.fykos.cz|FKSDB]]**. 
-
-Jestli máš problém prihlásit se kontaktuj **[[webmaster@fykos.cz|správcu DB]]**.
-
-Ak ješte nemáš účet vo **[[https://db.fykos.cz|FKSDB]]** vytvor si ho! Potom kontaktuj **[[webmaster@fykos.cz|správcu DB]]**.
-
-
+Momentálně nejste přihlášen(a)! Prosím vložte své identifikační údaje níže. Pro přihlášení musíte mít zapnuté cookies.
