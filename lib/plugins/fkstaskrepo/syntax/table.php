@@ -36,13 +36,13 @@ class syntax_plugin_fkstaskrepo_table extends DokuWiki_Syntax_Plugin {
         $this->Lexer->addSpecialPattern('<fkstaskrepotable\b.*?/>', $mode, 'plugin_fkstaskrepo_table');
     }
 
-    public function handle($match, $state, $pos, Doku_Handler &$handler) {
+    public function handle($match, $state, $pos, Doku_Handler $handler) {
         preg_match('/lang="([a-z]+)"/', substr($match, 18, -2), $m);
         $lang = $m[1];
         return [$state, $lang];
     }
 
-    public function render($mode, Doku_Renderer &$renderer, $data) {
+    public function render($mode, Doku_Renderer $renderer, $data) {
         list($state, $lang) = $data;
         switch ($state) {
             case DOKU_LEXER_SPECIAL:

@@ -34,7 +34,7 @@ class syntax_plugin_fkshelper_small extends DokuWiki_Syntax_Plugin {
     /**
      * Handle the match
      */
-    public function handle($match,$state) {
+    public function handle($match, $state, $pos, Doku_Handler $handler) {
         if($state == DOKU_LEXER_UNMATCHED){
             return [$state, $match];
         }
@@ -42,7 +42,7 @@ class syntax_plugin_fkshelper_small extends DokuWiki_Syntax_Plugin {
         return [$state];
     }
 
-    public function render($mode,Doku_Renderer &$renderer,$data) {
+    public function render($mode,Doku_Renderer $renderer,$data) {
         if($mode == 'xhtml'){
             list($state,$payload) = $data;
             switch ($state) {

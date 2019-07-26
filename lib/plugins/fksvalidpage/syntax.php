@@ -42,7 +42,7 @@ class syntax_plugin_fksvalidpage extends DokuWiki_Syntax_Plugin {
     /**
      * Handle the match
      */
-    public function handle($match, $state, $pos, Doku_Handler &$handler) {
+    public function handle($match, $state, $pos, Doku_Handler $handler) {
         //$match = substr($match, 12, -13);
         //$newsauthor=preg_split('/-/', $match);
         //$to_page.=$newsauthor[1];
@@ -91,7 +91,7 @@ class syntax_plugin_fksvalidpage extends DokuWiki_Syntax_Plugin {
         return array($state, array($to_page));
     }
 
-    public function render($mode, Doku_Renderer &$renderer, $data) {
+    public function render($mode, Doku_Renderer $renderer, $data) {
         // $data is what the function handle return'ed.
         if ($mode == 'xhtml') {
             /** @var Do ku_Renderer_xhtml $renderer */

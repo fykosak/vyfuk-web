@@ -1,7 +1,0 @@
-base   facebooklike
-author Marvin Thomas Rabe
-email  mrabe@marvinrabe.de
-date   2012-06-05
-name   Facebook Like-Button
-desc   Adds Facebook like-buttons
-url    https://github.com/marvinrabe/dokuwiki-facebook

@@ -35,7 +35,7 @@ class syntax_plugin_fksimageshow_fl extends DokuWiki_Syntax_Plugin {
     /**
      * Handle the match
      */
-    public function handle($match,$state) {
+    public function handle($match, $state, $pos, Doku_Handler $handler) {
         
         preg_match('/{{\s*fl\s*>(.*)\|(.*)}}/',$match,$matches);
        
@@ -44,7 +44,7 @@ class syntax_plugin_fksimageshow_fl extends DokuWiki_Syntax_Plugin {
         return array($state,$link,$text);
     }
 
-    public function render($mode,Doku_Renderer &$renderer,$data) {
+    public function render($mode,Doku_Renderer $renderer,$data) {
 
         if($mode == 'xhtml'){
             list($state,$link,$text) = $data;

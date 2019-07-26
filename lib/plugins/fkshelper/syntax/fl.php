@@ -37,7 +37,7 @@ class syntax_plugin_fkshelper_fl extends DokuWiki_Syntax_Plugin {
         $this->Lexer->addSpecialPattern('{{media-button.*?\>.+?\|.+?}}', $mode, 'plugin_fkshelper_fl');
     }
 
-    public function handle($match, $state) {
+    public function handle($match, $state, $pos, Doku_Handler $handler) {
         preg_match('/{{\s*(media-)?(button|fl)(.*)>(.*)\|(.*)}}/', $match, $matchesButton);
         list(, $is_media, $button_type, $attributes, $link, $text) = $matchesButton;
         $type = 'link';
@@ -61,7 +61,7 @@ class syntax_plugin_fkshelper_fl extends DokuWiki_Syntax_Plugin {
         return [$state, $link, $text, $attributes, $type];
     }
 
-    public function render($mode, Doku_Renderer &$renderer, $data) {
+    public function render($mode, Doku_Renderer $renderer, $data) {
         global $ID;
         if (!$data) {
             return false;

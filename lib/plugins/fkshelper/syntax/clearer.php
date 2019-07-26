@@ -22,11 +22,11 @@ class syntax_plugin_fkshelper_clearer extends DokuWiki_Syntax_Plugin {
         $this->Lexer->addSpecialPattern('~~clear~~', $mode, 'plugin_fkshelper_clearer');
     }
 
-    public function handle($match, $state) {
+    public function handle($match, $state, $pos, Doku_Handler $handler) {
         return [$state];
     }
 
-    public function render($mode, Doku_Renderer &$renderer, $data) {
+    public function render($mode, Doku_Renderer $renderer, $data) {
         if ($mode == 'xhtml') {
             list($state) = $data;
             switch ($state) {

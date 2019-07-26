@@ -61,7 +61,7 @@ class syntax_plugin_fkstaskrepo_batchpdf extends DokuWiki_Syntax_Plugin {
      * @param Doku_Handler $handler The handler
      * @return array Data for the renderer
      */
-    public function handle($match, $state, $pos, Doku_Handler &$handler) {
+    public function handle($match, $state, $pos, Doku_Handler $handler) {
         global $conf;
 
         // Extract attributes from $match to $attr

@@ -43,7 +43,7 @@ class syntax_plugin_fksimageshow_ilwrap extends DokuWiki_Syntax_Plugin {
     /**
      * Handle the match
      */
-    public function handle($match,$state) {
+    public function handle($match, $state, $pos, Doku_Handler $handler) {
         $matches = array();
         preg_match('/{{il-wrap>([\S\s]+)*}}/',$match,$matches);
         $ms = array();
@@ -58,7 +58,7 @@ class syntax_plugin_fksimageshow_ilwrap extends DokuWiki_Syntax_Plugin {
         return array($state,array($datas));
     }
 
-    public function render($mode,Doku_Renderer &$renderer,$data) {
+    public function render($mode,Doku_Renderer $renderer,$data) {
         if($mode == 'xhtml'){
 
             /** @var Do ku_Renderer_xhtml $renderer */

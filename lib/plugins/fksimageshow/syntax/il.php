@@ -46,7 +46,7 @@ class syntax_plugin_fksimageshow_il extends DokuWiki_Syntax_Plugin {
     /**
      * Handle the match
      */
-    public function handle($match,$state) {
+    public function handle($match, $state, $pos, Doku_Handler $handler) {
         $matches = array();
         preg_match('/\{\{il\>(.+?)\}\}/',$match,$matches);
         list(,$p) = $matches;
@@ -54,7 +54,7 @@ class syntax_plugin_fksimageshow_il extends DokuWiki_Syntax_Plugin {
         return array($state,array($data));
     }
 
-    public function render($mode,Doku_Renderer &$renderer,$data) {
+    public function render($mode,Doku_Renderer $renderer,$data) {
         global $ID;
         if($mode == 'xhtml'){
 

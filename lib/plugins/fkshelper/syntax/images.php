@@ -35,7 +35,7 @@ class syntax_plugin_fkshelper_images extends DokuWiki_Syntax_Plugin {
         $this->Lexer->addSpecialPattern('{{ib.*?\>.+?\|.*?\|.*?}}', $mode, 'plugin_fkshelper_images');
     }
 
-    public function handle($match, $state) {
+    public function handle($match, $state, $pos, Doku_Handler $handler) {
         $matches = [];
         preg_match('/{{([a-z]+)(.*)>(.+?)}}/', $match, $matches);
         list(, $type, $attributes, $p) = $matches;

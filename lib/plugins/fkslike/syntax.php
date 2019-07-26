@@ -29,12 +29,12 @@ class syntax_plugin_fkslike extends DokuWiki_Syntax_Plugin {
     /**
      * Handle the match
      */
-    public function handle($match, $state, $pos, Doku_Handler &$handler) {
+    public function handle($match, $state, $pos, Doku_Handler $handler) {
 $to_page.= '<div class="fb-like-box" data-href="https://www.facebook.com/ksvyfuk" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div>';
         return array($state, array($to_page));
     }
 
-    public function render($mode, Doku_Renderer &$renderer, $data) {
+    public function render($mode, Doku_Renderer $renderer, $data) {
         // $data is what the function handle return'ed.
         if ($mode == 'xhtml') {
             /** @var Do ku_Renderer_xhtml $renderer */
