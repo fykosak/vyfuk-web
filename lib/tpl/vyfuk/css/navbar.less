@@ -1,0 +1,97 @@
+
+/**
+* CSS for navbar on vyfuk.org
+* @created on : Feb 18, 2015, 5:19:01 PM
+* @author     : Michal Červeňák <miso@fykos.cz>
+*
+*/
+@media screen{
+    
+    .navbar{
+        -webkit-box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+
+        background-color: __background_other__;
+        margin: 0;
+        font-family: gloria-hallelujah, sans-serif;
+        letter-spacing: 2px;
+        color: __text_other__;
+        a{
+            color: __background__ !important;
+            font-size: 110%;
+            &:hover,&:focus{
+                color: __background_other__ !important;
+                background-color:  __background__ !important;
+                border-radius: 3px;
+            }
+        }
+        ul {
+            li{
+                display: table;
+                .FKS_topbar_user:before{
+                    content: url("images/smiley_white.png");
+                }
+                .FSK_topbar_contest{
+                    background-image: url("images/logo_vyfuk_white.png");
+                    background-repeat: no-repeat;
+                    background-size: 60px;
+
+                    padding-left: 4em !important;
+                }
+                &:hover,&:focus{
+                    .FKS_topbar_user:before{
+                        content: url("images/season/"+__season__+"/smiley_radioactive.png");
+                    }
+                    .FSK_topbar_contest{
+                        background-image: url("images/season/"+__season__+"/logo_vyfuk_radioactive.png");
+                    }
+                }
+                &.active a{
+                    background-color: __text_alt__ ;
+                    &:hover a{
+                       background-color: __text_alt_hover__ ;
+                    }
+                }
+            }
+            ul {
+                li {
+                    span{
+                        padding:0!important;
+                    }
+                    .button {
+                        font-family: gloria-hallelujah, sans-serif!important;
+                        color:  __background_other__!important;
+                        width: 100%;
+                        letter-spacing: 2px;
+                        background-color:__background__ !important;
+                        border:none;
+                        display:block;
+                        &:hover{
+                            background-color: __background_other__ !important;
+                            color:  __background__ !important;
+                        }
+                    }
+
+                    a {
+                        //text-align: center;
+                        color: __background_other__ !important;
+                        background-color:  __background__ !important;
+                        border-radius: 3px;
+                        text-decoration: none !important;
+                        padding: 0.5em 1em 0.4em 1em;
+                        &:hover,&:focus{
+                            color: __background__ !important;
+                            background-color:  __background_other__ !important;
+                            display: block !important;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+
+
+

@@ -1,0 +1,7 @@
+base   filelink
+author Lukas Timko
+email  lukast@fykos.cz
+date   2014-03-12
+name   filelink plugin
+desc   Creating a link to a file if exists.
+url    http://git@fykos.cz:dokuwiki/plugin-filelink.git

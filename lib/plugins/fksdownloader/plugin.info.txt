@@ -1,0 +1,7 @@
+base   fksdownloader
+author Michal Koutný
+email  michal@fykos.cz
+date   2014-03-16
+name   fksdownloader plugin
+desc   Downloads (via plain HTTP or web service over HTTP) and caches various FKS resources.
+url    http://git@fykos.cz:dokuwiki/plugin-fksdownloader.git

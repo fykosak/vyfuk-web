@@ -1,0 +1,58 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 16, 2015, 10:38:40 PM
+    Author     : miso
+*/
+
+@media screen and(min-width:855px){
+    .page,.fkssidebar_R{
+        width: 100%;
+        float: none;
+        padding: 0em 2em 0 2em;
+    }
+    .dokuwiki[data-do=show] {
+        .page{
+            width: 66%;
+            float: left;
+        }
+        .fkssidebar_R{
+            width: 33%;
+            float:right;
+        }
+    }
+
+}
+@media screen and(max-width:855px){
+    .page,.fkssidebar_R{
+        float: none;
+        padding: 0em 1em 0 1em;
+    }
+}
+@media screen{
+    .fkssidebar_R .FKS_images{
+        height: 175px;
+    }
+    
+}
+
+/**
+* print projection and another pičoviny
+*/
+@media print,projection,tv{
+    .page, .fkssidebar_R{
+        width: 100%;
+    }
+    
+}
+@media print{
+    .fkssidebar_R{
+        display: none;
+    }
+}
+
+
+

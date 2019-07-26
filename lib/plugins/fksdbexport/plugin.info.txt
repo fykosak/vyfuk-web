@@ -1,0 +1,7 @@
+base   fksdbexport
+author Michal Koutný
+email  michal@fykos.cz
+date   2014-02-27
+name   fksdbexport plugin
+desc   Downloads, caches and renders data received via web service.
+url    http://git@fykos.cz:dokuwiki/plugin-fksdbexport.git

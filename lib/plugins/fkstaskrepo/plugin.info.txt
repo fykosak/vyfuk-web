@@ -1,0 +1,7 @@
+base   fkstaskrepo
+author Michal Koutný
+email  michal@fykos.cz
+date   2014-04-22
+name   fkstaskrepo plugin
+desc   Management of problems (data, inspired by 'data' plugin).
+url    http://git@fykos.cz:dokuwiki/plugin-fkstaskrepo.git

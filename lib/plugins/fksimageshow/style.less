@@ -1,0 +1,102 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 30, 2014, 2:50:38 PM
+    Author     : miso
+*/
+
+
+/**
+* define width of elements
+*/
+
+.FKS_image_show{
+    width:100%;
+
+}
+
+@media  (min-width:600px){
+    .FKS_image_show_mini{
+        width: 50%; 
+        float:left;
+    }
+}
+
+
+
+
+
+.FKS_image_show_mini{
+    &:nth-child(even){
+        .FKS_images{
+            margin-left: .5em;
+        }
+
+    }
+
+}
+
+
+.FKS_images{
+    position:relative; 
+    height: 300px;
+    margin-top:.5em;
+
+    overflow:hidden;
+    .FKS_image{
+        background-size: cover;
+        background-position-y:50%;
+        height: 100%;
+        width: 100%;
+
+    }
+    .FKS_image_title{
+        background-color: __text_alt__;
+        position:absolute; 
+        bottom:0;
+        width: 100%;
+        h2{
+            color:__background__ !important;
+            padding-left: .5em;
+            padding-right: .5em;
+            font-size: 200%;
+        }
+    }
+    &:hover{ 
+        .FKS_image_title{
+            background-color: __text_alt_hover__;
+        }
+    }
+}
+
+
+/*
+@media(min-width:600px){
+    div.FKS_images{
+        width:50%;
+        float:left;
+        a {
+            div.FKS_image{
+
+            }
+        }
+    }
+}
+@media(min-width:1200px){
+    div.FKS_images{
+        width:33%;
+        float:left;
+
+        a {
+            div.FKS_image{
+
+            }
+        }
+    }
+}
+*/
+
+

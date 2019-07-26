@@ -1,0 +1,7 @@
+base   fkstimer
+author Michal Červňák
+email  miso@fykos.cz
+date   2014-03-18
+name   FKStimer
+desc   display time to deadline
+url    https://github.com/cevro/dokuwiki-plugin-fkstimer.git
