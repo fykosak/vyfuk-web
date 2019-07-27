@@ -17,18 +17,6 @@ require_once(DOKU_PLUGIN.'syntax.php');
  */
 class syntax_plugin_iframe extends DokuWiki_Syntax_Plugin {
 
-    function getInfo(){
-      return array(
-        'author' => 'Christopher Smith',
-        'email'  => 'chris@jalakai.co.uk',
-        'date'   => '2008-10-31',
-        'name'   => 'iframe Plugin',
-        'desc'   => 'Add an iframe containing the specified url
-                     syntax: {{url>http://www.somesite.com/somepage.htm [w,h]|alternate text}}',
-        'url'    => 'http://www.dokuwiki.org/plugin:iframe',
-      );
-    }
-
     function getType() { return 'substition'; }
     function getSort() { return 305; }
     function connectTo($mode) { $this->Lexer->addSpecialPattern('{{url>.*?}}',$mode,'plugin_iframe'); }
@@ -62,7 +50,7 @@ class syntax_plugin_iframe extends DokuWiki_Syntax_Plugin {
                 $opts['width'] = $matches[1];
                 if(!$matches[2]) $opts['width'] .= 'px'; //default to pixel when no unit was set
                 $opts['height'] = $matches[4];
-                if(!$matches[5]) $opts['width'] .= 'px'; //default to pixel when no unit was set
+                if(!$matches[5]) $opts['height'] .= 'px'; //default to pixel when no unit was set
             }elseif($matches[2]){
                 // only height was given
                 $opts['height'] = $matches[1];
@@ -84,7 +72,7 @@ class syntax_plugin_iframe extends DokuWiki_Syntax_Plugin {
         return $opts;
     }
 
-    function render($mode, Doku_Renderer $renderer, $data) {
+    function render($mode, Doku_Renderer $R, $data) {
         if($mode != 'xhtml') return false;
 
         if(!$data['url']){
