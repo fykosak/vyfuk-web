@@ -1,0 +1,15 @@
+[submodule "lib/tpl/dokuwiki-template-vyfuk"]
+	path = lib/tpl/vyfuk
+	url = git@github.com:fykosak/dokuwiki-template-vyfuk.git
+[submodule "lib/tpl/vyfuk"]
+	path = lib/tpl/vyfuk
+	url = git@github.com:fykosak/dokuwiki-template-vyfuk.git
+[submodule "lib/plugins/captcha"]
+	path = lib/plugins/captcha
+	url = git@github.com:splitbrain/dokuwiki-plugin-captcha.git
+[submodule "lib/plugins/fksvlna"]
+	path = lib/plugins/fksvlna
+	url = git@github.com:fykosak/dokuwiki-plugin-fksvlna.git
+[submodule "dokuwiki-plugin-social"]
+	path = dokuwiki-plugin-social
+	url = git@github.com:fykosak/dokuwiki-plugin-social.git
