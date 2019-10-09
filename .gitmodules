@@ -11,5 +11,5 @@
 	path = lib/plugins/fksvlna
 	url = git@github.com:fykosak/dokuwiki-plugin-fksvlna.git
 [submodule "dokuwiki-plugin-social"]
-	path = dokuwiki-plugin-social
+	path = lib/plugins/social
 	url = git@github.com:fykosak/dokuwiki-plugin-social.git
