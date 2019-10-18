@@ -7,9 +7,9 @@
 [submodule "lib/plugins/captcha"]
 	path = lib/plugins/captcha
 	url = git@github.com:splitbrain/dokuwiki-plugin-captcha.git
-[submodule "lib/plugins/fksvlna"]
-	path = lib/plugins/fksvlna
-	url = git@github.com:fykosak/dokuwiki-plugin-fksvlna.git
 [submodule "dokuwiki-plugin-social"]
 	path = lib/plugins/social
 	url = git@github.com:fykosak/dokuwiki-plugin-social.git
+[submodule "lib/plugins/fkshelper"]
+	path = lib/plugins/fkshelper
+	url = git@github.com:fykosak/dokuwiki-plugin-fkshelper.git

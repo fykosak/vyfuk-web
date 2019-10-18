@@ -1,7 +1,0 @@
-base   fkshelper
-author Michal Červeňák
-email  miso@fykos.cz
-date   2014-03-16
-name   FKShelper plugin
-desc   Helper plugin for plugins FKS* by FYKOS & Výfuk
-url    https://github.com/cevro/dokuwiki-plugin-fkshelper.git
