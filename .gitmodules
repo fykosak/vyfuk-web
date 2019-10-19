@@ -13,3 +13,9 @@
 [submodule "lib/plugins/fkshelper"]
 	path = lib/plugins/fkshelper
 	url = git@github.com:fykosak/dokuwiki-plugin-fkshelper.git
+[submodule "lib/plugins/cookielaw"]
+	path = lib/plugins/cookielaw
+	url = git@github.com:fykosak/dokuwiki-plugin-cookielaw.git
+[submodule "lib/plugins/datatemplate"]
+	path = lib/plugins/datatemplate
+	url = git@github.com:fykosak/dokuwiki-plugin-datatemplate.git
