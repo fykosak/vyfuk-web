@@ -1,3 +1,0 @@
-Níže lze upravit text zadání úlohy.
-
-Pomni však, že takto upravený text úlohy už nepodléhá automatickým updateům.

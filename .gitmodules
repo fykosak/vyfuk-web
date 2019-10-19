@@ -19,3 +19,18 @@
 [submodule "lib/plugins/datatemplate"]
 	path = lib/plugins/datatemplate
 	url = git@github.com:fykosak/dokuwiki-plugin-datatemplate.git
+[submodule "lib/plugins/fksnewsfeed"]
+	path = lib/plugins/fksnewsfeed
+	url = git@github.com:fykosak/dokuwiki-plugin-fksnewsfeed.git
+[submodule "lib/plugins/fkstaskrepo"]
+	path = lib/plugins/fkstaskrepo
+	url = git@github.com:fykosak/dokuwiki-plugin-fkstaskrepo.git
+[submodule "lib/plugins/fkstimer"]
+	path = lib/plugins/fkstimer
+	url = git@github.com:fykosak/dokuwiki-plugin-fkstimer.git
+[submodule "lib/plugins/gallery"]
+	path = lib/plugins/gallery
+	url = git@github.com:fykosak/dokuwiki-plugin-gallery.git
+[submodule "lib/plugins/fksdbexport"]
+	path = lib/plugins/fksdbexport
+	url = git@github.com:fykosak/dokuwiki-plugin-fksdbexport.git
