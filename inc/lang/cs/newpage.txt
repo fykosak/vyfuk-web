@@ -1,3 +1,4 @@
-====== Stránka s tímto názvem ještě neexistuje ======
+====== 404: Výfuček not found ======
 
-Odkaz vás zavedl na stránku, která ještě neexistuje. Můžete ji vytvořit stisknutím tlačítka ''Vytvořit stránku''.
+Oops. Asi se nám ztratil Výfuček...\\
+Než ho najdeme, zkus se vrátit zpět na [[start|úvodní stránku]].

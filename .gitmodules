@@ -1,36 +1,34 @@
-[submodule "lib/tpl/dokuwiki-template-vyfuk"]
-	path = lib/tpl/vyfuk
-	url = git@github.com:fykosak/dokuwiki-template-vyfuk.git
-[submodule "lib/tpl/vyfuk"]
-	path = lib/tpl/vyfuk
-	url = git@github.com:fykosak/dokuwiki-template-vyfuk.git
 [submodule "lib/plugins/captcha"]
 	path = lib/plugins/captcha
-	url = git@github.com:splitbrain/dokuwiki-plugin-captcha.git
+	url = https://github.com/splitbrain/dokuwiki-plugin-captcha.git
 [submodule "dokuwiki-plugin-social"]
 	path = lib/plugins/social
-	url = git@github.com:fykosak/dokuwiki-plugin-social.git
+	url = https://github.com/fykosak/dokuwiki-plugin-social.git
 [submodule "lib/plugins/fkshelper"]
 	path = lib/plugins/fkshelper
-	url = git@github.com:fykosak/dokuwiki-plugin-fkshelper.git
+	url = https://github.com/fykosak/dokuwiki-plugin-fkshelper.git
 [submodule "lib/plugins/cookielaw"]
 	path = lib/plugins/cookielaw
-	url = git@github.com:fykosak/dokuwiki-plugin-cookielaw.git
+	url = https://github.com/fykosak/dokuwiki-plugin-cookielaw.git
 [submodule "lib/plugins/datatemplate"]
 	path = lib/plugins/datatemplate
-	url = git@github.com:fykosak/dokuwiki-plugin-datatemplate.git
+	url = https://github.com/fykosak/dokuwiki-plugin-datatemplate.git
 [submodule "lib/plugins/fksnewsfeed"]
 	path = lib/plugins/fksnewsfeed
-	url = git@github.com:fykosak/dokuwiki-plugin-fksnewsfeed.git
+	url = https://github.com/fykosak/dokuwiki-plugin-fksnewsfeed.git
 [submodule "lib/plugins/fkstaskrepo"]
 	path = lib/plugins/fkstaskrepo
-	url = git@github.com:fykosak/dokuwiki-plugin-fkstaskrepo.git
+	url = https://github.com/fykosak/dokuwiki-plugin-fkstaskrepo.git
 [submodule "lib/plugins/fkstimer"]
 	path = lib/plugins/fkstimer
-	url = git@github.com:fykosak/dokuwiki-plugin-fkstimer.git
+	url = https://github.com/fykosak/dokuwiki-plugin-fkstimer.git
 [submodule "lib/plugins/gallery"]
 	path = lib/plugins/gallery
-	url = git@github.com:fykosak/dokuwiki-plugin-gallery.git
+	url = https://github.com/fykosak/dokuwiki-plugin-gallery.git
 [submodule "lib/plugins/fksdbexport"]
 	path = lib/plugins/fksdbexport
-	url = git@github.com:fykosak/dokuwiki-plugin-fksdbexport.git
+	url = https://github.com/fykosak/dokuwiki-plugin-fksdbexport.git
+[submodule "lib/tpl/vyfuk"]
+	path = lib/tpl/vyfuk
+	url = https://github.com/fykosak/dokuwiki-template-vyfuk.git
+	branch = dev
