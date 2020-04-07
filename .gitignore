@@ -12,3 +12,6 @@
 /data/meta/*
 /data/pages/*
 /data/tmp/*
+
+# Commit also specific empty directories with file _dummy
+!~/_dummy
