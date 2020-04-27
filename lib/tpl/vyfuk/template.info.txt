@@ -1,0 +1,7 @@
+base     vyfuk
+author   Radka Štefaníková, Michal Červeňák, Michal Koutný
+email    webmaster@fykos.cz
+date     13.03.2015
+name     Výfučí template
+desc     DokuWiki template with drop-down menu and bootstrap
+url      http://vyfuk.mff.cuni.cz

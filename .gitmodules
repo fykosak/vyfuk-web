@@ -28,7 +28,45 @@
 [submodule "lib/plugins/fksdbexport"]
 	path = lib/plugins/fksdbexport
 	url = https://github.com/fykosak/dokuwiki-plugin-fksdbexport.git
-[submodule "lib/tpl/vyfuk"]
-	path = lib/tpl/vyfuk
-	url = https://github.com/fykosak/dokuwiki-template-vyfuk.git
-	branch = dev
+[submodule "lib/plugins/data"]
+	path = lib/plugins/data
+	url = https://github.com/splitbrain/dokuwiki-plugin-data.git
+[submodule "lib/plugins/comment"]
+	path = lib/plugins/comment
+	url = https://github.com/dokufreaks/plugin-comment.git
+[submodule "lib/plugins/fksdbauth"]
+	path = lib/plugins/fksdbauth
+	url = https://github.com/fykosak/dokuwiki-plugin-fksdbauth.git
+[submodule "lib/plugins/fksdownloader"]
+	path = lib/plugins/fksdownloader
+	url = https://github.com/fykosak/dokuwiki-plugin-fksdownloader.git
+[submodule "lib/plugins/fksvlna"]
+	path = lib/plugins/fksvlna
+	url = https://github.com/fykosak/dokuwiki-plugin-fksvlna.git
+[submodule "lib/plugins/iframe"]
+	path = lib/plugins/iframe
+	url = https://github.com/Chris--S/dokuwiki-plugin-iframe.git
+[submodule "lib/plugins/mathjax"]
+	path = lib/plugins/mathjax
+	url = https://github.com/liffiton/dokuwiki-plugin-mathjax.git
+[submodule "lib/plugins/pageburner"]
+	path = lib/plugins/pageburner
+	url = https://github.com/fykosak/dokuwiki-plugin-pageburner.git
+[submodule "lib/plugins/searchtext"]
+	path = lib/plugins/searchtext
+	url = https://github.com/michitux/dokuwiki-plugin-searchtext.git
+[submodule "lib/plugins/simpleforward"]
+	path = lib/plugins/simpleforward
+	url = https://github.com/fykosak/dokuwiki-plugin-simpleforward.git
+[submodule "lib/plugins/sqlite"]
+	path = lib/plugins/sqlite
+	url = https://github.com/cosmocode/sqlite.git
+[submodule "lib/plugins/tablewidth"]
+	path = lib/plugins/tablewidth
+	url = https://github.com/dwp-forge/tablewidth.git
+[submodule "lib/plugins/text"]
+	path = lib/plugins/text
+	url = https://github.com/michitux/dokuwiki-plugin-text.git
+[submodule "lib/plugins/fksimageshow"]
+	path = lib/plugins/fksimageshow
+	url = https://github.com/fykosak/dokuwiki-plugin-fksimageshow.git

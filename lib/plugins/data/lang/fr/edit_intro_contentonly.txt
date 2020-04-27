@@ -1,1 +1,0 @@
-Éditez l'[[doku>plugin:data|entrée]] et cliquez sur « Enregistrer ». Veuillez ne modifier les entrées que si vous pouvez les **améliorer**.
