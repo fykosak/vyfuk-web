@@ -25,8 +25,6 @@ $conf['disableactions'] = 'register,source,export_raw';
 $conf['target']['extern'] = '_blank';
 $conf['userewrite'] = '1';
 $conf['useslash'] = 1;
-$conf['proxy']['user'] = 'miso';
-$conf['proxy']['pass'] = '<b>enNzazM2My4xNDEtMw==';
 $conf['plugin']['gallery']['cols'] = 3;
 $conf['plugin']['gallery']['options'] = 'cache,lightbox';
 $conf['plugin']['fksimageshow']['dirs'] = 'galerie/tabor2012;galerie/tabor2013;galerie/setkani_podzim2012;galerie/setkani_podzim2013;galerie/setkani_jaro2014;galerie/setkani_jaro2013;galerie/tabor2014';
