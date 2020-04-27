@@ -28,10 +28,6 @@
 [submodule "lib/plugins/fksdbexport"]
 	path = lib/plugins/fksdbexport
 	url = https://github.com/fykosak/dokuwiki-plugin-fksdbexport.git
-[submodule "lib/tpl/vyfuk"]
-	path = lib/tpl/vyfuk
-	url = https://github.com/fykosak/dokuwiki-template-vyfuk.git
-	branch = dev
 [submodule "lib/plugins/data"]
 	path = lib/plugins/data
 	url = https://github.com/splitbrain/dokuwiki-plugin-data.git
@@ -71,3 +67,6 @@
 [submodule "lib/plugins/text"]
 	path = lib/plugins/text
 	url = https://github.com/michitux/dokuwiki-plugin-text.git
+[submodule "lib/plugins/fksimageshow"]
+	path = lib/plugins/fksimageshow
+	url = https://github.com/fykosak/dokuwiki-plugin-fksimageshow.git
