@@ -1,0 +1,12 @@
+cache/*
+!cache/.placeholder
+locks/*
+!locks/.placeholder
+tmp/*
+!tmp/.placeholder
+media/*
+!media/.placeholder
+media_attic/*
+!media_attic/.placeholder
+media_meta/*
+!media_meta/.placeholder

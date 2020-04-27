@@ -1,6 +1,5 @@
 RewriteEngine on
- 
- 
+
 RewriteRule ^_media/(.*)              lib/exe/fetch.php?media=$1  [QSA,L]
 RewriteRule ^_detail/(.*)             lib/exe/detail.php?media=$1  [QSA,L]
 RewriteRule ^_export/([^/]+)/(.*)     doku.php?do=export_$1&id=$2  [QSA,L]
@@ -9,3 +8,12 @@ RewriteCond %{REQUEST_FILENAME}       !-f
 RewriteCond %{REQUEST_FILENAME}       !-d
 RewriteRule (.*)                      doku.php?id=$1  [QSA,L]
 RewriteRule ^index.php$               doku.php
+
+Redirect permanent "/wiki"  "https://vyfuk-wiki.ks.matfyz.cz/start"
+
+#Redirect		permanent / https://vyfuk.mff.cuni.cz/
+
+RewriteCond %{HTTPS}  !=on 
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
+
+RewriteRule /ulohy/archiv /ulohy/start

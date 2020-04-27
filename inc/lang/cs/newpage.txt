@@ -1,4 +1,4 @@
 ====== 404: Výfuček not found ======
 
 Oops. Asi se nám ztratil Výfuček...\\
-Než ho najdeme, zkus se vrátit zpět na [[start|úvodní stránku]].
+Než ho najdeme, zkus se vrátit zpět na [[start:|úvodní stránku]].

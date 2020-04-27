@@ -8,6 +8,7 @@ require_once(dirname(__FILE__) . '/tpl_functions.php');
 
 
 require_once (DOKU_PLUGIN . plugin_directory('fksimageshow') . '/helper.php');
+require_once (DOKU_PLUGIN . plugin_directory('fkshelper') . '/action.php');
 global $ACT;
 global $ID;
 ?>

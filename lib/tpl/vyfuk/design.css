@@ -478,7 +478,7 @@
     div.dokuwiki ol ol ol ol { list-style-type: lower-greek; }
 
     div.dokuwiki blockquote {
-        border-left: 3px solid __background_other__;
+        border-left: 3px solid __text_alt__;
         padding-left: 3px;
         font-size:100%;
 

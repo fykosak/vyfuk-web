@@ -1,5 +1,7 @@
+/_test/*
 /conf/*.local.conf
 /conf/acl.auth.php
+/conf/dokuwiki.php
 /conf/local.php
 /conf/local.protected.php
 /conf/users.auth.php

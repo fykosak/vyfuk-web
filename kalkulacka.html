@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Kalkulaèka pro výpoèet zemìpisných souøadnic</h3>
+
+Azimut: <input type="text" id="azimut" value=""> stupòù
+<p></p>
+Úhlová výška nad obzorem Polárky: <input type="text" id="uhel_stupne" value=""> stupòù <input type="text" id="uhel_minuty" value=""> minut
+<p></p>
+Èas mìøení: <input type="text" id="cas_hodiny" value=""> hodin 
+<input type="text" id="cas_minuty" value=""> minut 
+<p></p>
+Poèet dní od podzimní rovnodennosti: <input type="text" id="pocet_dni" value=""> dní 
+<p></p>
+
+<i>Pozn.: Zadávejte pouze pøirozená èísla (tedy èísla
+kladná bez desetinných èárek). V pøípadì, kdy máte zadávat minuty, je tøeba zadat èíslo v rozmezí 0-59.<br>
+Pozn.: Pokud jste mìøení provedli nedlouho po pùlnoci, pøiètìte z dùvodu pøesnosti èas k 24 a poèet dní nezvyšujte. Napø. 0 hodin a 5 minut zapište jako 24 hodin a 5 minut.<br>
+Tip: Zaokrouhlovací chyby se promítnou nejménì, je-li váš èas mìøení mezi 20 hodinami a pùlnocí.</i>
+
+<p></p>
+<button id="Castor">Vypoèítej pro Castor</button>
+<button id="Regulus">Vypoèítej pro Regulus</button>
+<p id="delka"></p>
+<p id="sirka"></p>
+
+
+<script type='text/javascript'>
+document.getElementById("Castor").onclick = function () {
+    var azimut = parseInt(document.getElementById("azimut").value);
+    var uhel_stupne = parseInt(document.getElementById("uhel_stupne").value);
+    var uhel_minuty = parseInt(document.getElementById("uhel_minuty").value);
+    var cas_hodiny = parseInt(document.getElementById("cas_hodiny").value);
+    var cas_minuty = parseInt(document.getElementById("cas_minuty").value);
+    var pocet_dni = parseInt(document.getElementById("pocet_dni").value);
+    var greenwich = cas_hodiny*15 + cas_minuty/4 - 2*15;
+    var castor_rektascenze = 113.65; //7*15+34/4+drobný ve stupních
+    var theta_kor = (3+56/60)/4;
+
+    var a = 27.5 - (10.83/13)*(pocet_dni-185);
+    var b = 4.135 - (1.055/13)*(pocet_dni-185);
+    var hodin_uhel = 189.0432 + azimut + (pocet_dni-185)*(-1.79) + (cas_hodiny+cas_minuty/60-20)*(-(a-b*(cas_hodiny+cas_minuty/60-20)));
+    var result = Math.abs(castor_rektascenze + hodin_uhel - greenwich - theta_kor*pocet_dni - 2.3);
+
+    document.getElementById("delka").innerHTML = "Zemìpisná délka je " + Math.floor(result%360) + "° " + Math.round((result-Math.floor(result%360))*60) + "'.";
+    document.getElementById("sirka").innerHTML = "Zemìpisná šíøka je " + uhel_stupne + "° " + uhel_minuty + "'.";
+}
+document.getElementById("Regulus").onclick = function () {
+    var azimut = parseInt(document.getElementById("azimut").value);
+    var uhel_stupne = parseInt(document.getElementById("uhel_stupne").value);
+    var uhel_minuty = parseInt(document.getElementById("uhel_minuty").value);
+    var cas_hodiny = parseInt(document.getElementById("cas_hodiny").value);
+    var cas_minuty = parseInt(document.getElementById("cas_minuty").value);
+    var pocet_dni = parseInt(document.getElementById("pocet_dni").value);
+    var greenwich = cas_hodiny*15 + cas_minuty/4 - 2*15;
+    var regulus_rektascenze = 152; //ve stupních
+    var theta_kor = (3+56/60)/4;
+
+    var a = 2 + (4.42/13)*(pocet_dni-185);
+    var b = 1.01 - (0.97/13)*(pocet_dni-185)
+    var hodin_uhel = 195.04067 + azimut + (pocet_dni-185)*(-0.25) + (cas_hodiny+cas_minuty/60-20)*(-a-b*(cas_hodiny+cas_minuty/60-20));
+    var result = Math.abs(regulus_rektascenze + hodin_uhel - greenwich - theta_kor*pocet_dni - 1.7);
+
+    document.getElementById("delka").innerHTML = "Zemìpisná délka je " + Math.floor(result%360) + "° " + Math.round((result-Math.floor(result%360))*60) + "'.";
+    document.getElementById("sirka").innerHTML = "Zemìpisná šíøka je " + uhel_stupne + "° " + uhel_minuty + "'.";
+}
+</script>
+
+</body>
+</html>

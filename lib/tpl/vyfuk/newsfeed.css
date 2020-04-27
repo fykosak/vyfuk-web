@@ -1,0 +1,40 @@
+.btn.btn-fb, .btn.btn-messenger {
+	display: none;
+}
+
+.float-right {
+	float: right;
+}
+
+div.col-xl-4 {
+	padding: 15px;
+}
+
+.task-headline {
+	background-color: #fff !important;
+}
+
+.tag {
+	display: none;
+}
+
+.task-repo.batch-select {
+	display: none;
+}
+
+.fa-envelope:before {
+	content: ""
+}
+
+div.rss {
+	display: none;
+}
+
+.bs-callout {
+	border-left: 3px solid __text_alt__;
+	padding-left: 8px;
+}
+
+.form-group label {
+	width: 100%;
+}
