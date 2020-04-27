@@ -36,9 +36,6 @@
 !/data/pages/wiki/dokuwiki.txt
 !/data/pages/wiki/syntax.txt
 !/data/pages/wiki/welcome.txt
-/lib/tpl/*
-!/lib/tpl/dokuwiki
-!/lib/tpl/index.php
 lib/images/*/local/*
 
 # composer default ignores
