@@ -173,20 +173,4 @@ $conf['ftp']['user'] = 'user';
 $conf['ftp']['pass'] = 'password';
 $conf['ftp']['root'] = '/home/user/htdocs';
 
-// Move after server perms are fixed
-//Config for fkstaskrepo
-$conf['plugin']['fkstaskrepo']['page_path_mask_cs'] = 'ulohy:r%1$02d:s%2$d';
-$conf['plugin']['fkstaskrepo']['brochure_path_cs']='ulohy:r%1$02d:s%2$d:brozurka.pdf';
-$conf['plugin']['fkstaskrepo']['solution_path_cs']='ulohy:r%1$02d:s%2$d:priklad%2$d-%3$s.pdf';
-$conf['plugin']['fkstaskrepo']['yearbook_path_cs']='ulohy:r%1$02d:rocenka%1$02d.pdf';
-$conf['plugin']['fkstaskrepo']['serial_path_cs']='ulohy:r%1$02d:s%2$d:vyfucteni%2$d.pdf';
-$conf['plugin']['fkstaskrepo']['archive_path_cs']='ulohy:start';
-$conf['plugin']['fkstaskrepo']['attachment_path_cs'] = 'ulohy:r%1$02d:s%2$d';
-$conf['plugin']['fkstaskrepo']['task_data_meta_path'] = 'ulohy:%1$02d:%2$d:%3$s.json';
-$conf['plugin']['fkstaskrepo']['remote_path_mask'] = '/vyfuk%1$s/batch%2$s/out/zadaniWeb%2$s-new.xml';
-$conf['plugin']['fkstaskrepo']['remote_brochure_path_mask'] = '/vyfuk%1$s/batch%2$d/out/serie%2$d.pdf';
-$conf['plugin']['fkstaskrepo']['remote_serial_path_mask'] = '/vyfuk%1$s/batch%2$d/out/serial%2$d.pdf';
-$conf['plugin']['fkstaskrepo']['remote_task_solution_path_mask'] = '/vyfuk%1$s/batch%2$d/out/reseni%2$d-%5$s.pdf';
-$conf['plugin']['fkstaskrepo']['label_number_tasks_used'] = '1/1,2/2,3/3,4/4,5/5,E/6,V/7';
-$conf['plugin']['fkstaskrepo']['languages_used'] = 'cs';
-$conf['useacl'] = 'true';
+
